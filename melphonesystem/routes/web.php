@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('token','TokenController@newToken');
+
+Route::post('support/call','CallController@newCall');
+
+Route::get('phonesys', 'PhoneSysController@index')->name('phonesys');

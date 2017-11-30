@@ -76,6 +76,9 @@
                     @endauth
                 </div>
             @endif
+            <div class="top-right links">
+                <a href="{{ route('phonesys') }}">Go to Phone System</a>
+            </div>
 
             <div class="content">
                 <div class="title m-b-md">
