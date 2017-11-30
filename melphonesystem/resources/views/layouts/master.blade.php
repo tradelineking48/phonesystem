@@ -6,13 +6,9 @@
     <link rel="stylesheet" href=" {{ asset('css/bootstrap.min.css') }}">
     
     <script src="//static.twilio.com/libs/twiliojs/1.2/twilio.min.js"></script>
-    <meta id="token" name="token" content="{!! csrf_token() !!}">
-    <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
-    
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
     <div class="container">
