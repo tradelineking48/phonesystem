@@ -95,6 +95,11 @@ function updateCallStatus(status) {
 
 /* Get a Twilio Client token with an AJAX request */
 (function () {
+
+    $('.call-customer-button').on('click', function () {
+        callCustomer($("#number").val());
+    });
+
     var datas = { forPage: window.location.pathname };
     $.ajax({
         headers: {
@@ -108,8 +113,8 @@ function updateCallStatus(status) {
             xhr.setRequestHeader('X-CSRF-TOKEN', $("#token").attr('content'));
         }
     }).done(function (data) {
-        console.log(data.token);
-        Twilio.Device.setup(data.token);
+        console.log(data);
+        Twilio.Device.setup(data);
     });
 
     //     '/token', {forPage: window.location.pathname}, function(data) {
@@ -144,7 +149,7 @@ function updateCallStatus(status) {
         // Enable the hang up button and disable the call buttons
         hangUpButton.prop("disabled", false);
         callCustomerButtons.prop("disabled", true);
-        callSupportButton.prop("disabled", true);
+        //        callSupportButton.prop("disabled", true);
         answerButton.prop("disabled", true);
 
         // If phoneNumber is part of the connection, this is a call from a
@@ -162,7 +167,7 @@ function updateCallStatus(status) {
         // Disable the hangup button and enable the call buttons
         hangUpButton.prop("disabled", true);
         callCustomerButtons.prop("disabled", false);
-        callSupportButton.prop("disabled", false);
+        //        callSupportButton.prop("disabled", false);
 
         updateCallStatus("Ready");
     });

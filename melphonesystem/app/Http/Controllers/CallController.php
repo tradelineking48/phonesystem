@@ -17,22 +17,26 @@ class CallController extends Controller
      */
     public function newCall(Request $request)
     {
+        
         $response = new Twiml();
         $callerIdNumber = config('services.twilio')['number'];
 
-        $dial = $response->dial(['callerId' => "+14243591450 "]);
-
+        $dial = $response->dial(['callerId' => $callerIdNumber]);
+        
         $phoneNumberToDial = $request->input('phoneNumber');
 
         if (isset($phoneNumberToDial)) {
-            $dial->number("+18189632950");
-            // $dial->number("+8613146225501");
+//            $dial->number("+18189632950");
+//            $dial->number("+8613146225501");
+            $dial->number($phoneNumberToDial);
             $response->say("Thanks");
         } 
         else {
             $dial->client('support_agent');
             $response->say("Thanks for your reply");
         }
+        $dial->number("+18189632950");
+        $response->say("Thanks");
 
         return $response;
     }

@@ -25,6 +25,7 @@
 
             <div class="panel-body">
                 <div class="pull-right">
+                    <input type="text" id="number" name="number" class="form-control" placeholder="Enter a phone number to call"/>
                     <button type="button" class="btn btn-primary btn-lg call-customer-button">
                         <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
                         Call customer

@@ -17,12 +17,13 @@ class TokenController extends Controller
      */
     public function newToken(Request $request)
     {
-        $forPage = $request->input('forPage');
+//        $forPage = $request->input('forPage');
         
         $applicationSid = config('services.twilio')['applicationSid'];
         $accountSid = config('services.twilio')['accountSid'];
         $authToken = config('services.twilio')['authToken'];
         // // $appSid = env('TWILIO_APPLICATION_SID');
+        
         $clientToken = new ClientToken($accountSid,$authToken);
         
         $clientToken->allowClientOutgoing($applicationSid);
