@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Mel SoftPhone</title>
     <link rel="stylesheet" href=" {{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href=" {{ asset('css/app.css') }}">
     
     <script src="//static.twilio.com/libs/twiliojs/1.2/twilio.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
@@ -32,5 +33,6 @@
         });
     </script>
     <script src="{{ asset('js/browser-call.js') }}"></script>
+    <script src="{{ asset('js/dialpad.js') }}"></script>
 </body>
 </html>
