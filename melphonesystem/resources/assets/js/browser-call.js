@@ -19,7 +19,7 @@ function updateCallStatus(status) {
 (function(){
 
     $('.call-customer-button').on('click',function(){
-        callCustomer($("#number").val());
+        callCustomer($("#telNumber").val());
     });
 
     var datas = {forPage: window.location.pathname};
